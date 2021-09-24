@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animated navbar</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <style>
+      @media only screen and (min-width: 1200px)
+      {
+        .toggle-space
+        {
+          visibility: hidden;
+        }
+      }
+      @media only screen and (max-width: 1200px)
+      {
+        .nav-item, .text, .btn
+        {
+          display: none;
+        }
+        #toggler
+        {
+          display: unset !important;
+          float: right;
+          margin: 10px 20px 10px 10px;
+        }
+        .text, .btn
+        {
+          float: left !important;
+        } 
+      }
+      body
+      {
+        background-color: rgb(31, 31, 31);
+        margin: 0 auto;
+        padding: 0 auto;
+        color: rgb(199, 199, 199);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size:18px;
+      }
+      .navbar
+      {
+        background-color: rgb(26, 26, 26);
+        height:70px;
+      }
+      #logo
+      {
+        width:50px;
+        float: left;
+        margin: 10px 20px 10px 30px;
+      }
+      .nav-item
+      {
+        margin:5px;
+        padding: 18px 20px 18px 20px;
+        border-radius: 5px;
+        float: left;
+        cursor: pointer;
+        transition: background-color 0.6s;
+      }
+      .nav-item:hover
+      {
+        background-color: rgb(70, 70, 70);
+        border-radius:5px;
+      }
+      .text
+      {
+        margin:15px 2px 15px 0px;
+        padding:10px;
+        float: right;
+      }
+      .btn
+      {
+        margin:15px 10px 15px 2px;
+        height:40px;
+        width: 80px;
+        font-size: 14px;
+        float: right;
+        border: none;
+        border-radius: 5px;
+        background-color: gray;
+        color: rgb(196, 196, 196);
+        cursor: pointer;
+      }
+      .text:focus
+      {
+        outline: none;
+      }
+
+      #toggler
+      {
+        border: none;
+        width: 60px;
+        height: 50px;
+        background-color: rgb(92, 92, 92);
+        border-radius: 5px;
+        transition: background-color 0.6s;
+        display: none;
+      }
+      #toggler:hover
+      {
+        cursor: pointer;
+        background-color: rgb(66, 66, 66);
+      }
+      .toggle-space
+      {
+        background-color: rgb(41, 41, 41);
+        height: 100%;
+        width: 100%;
+        display: none;
+        float: left;
+      }
+      .toggle-space .item
+      {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .toggle-space .email-pass
+      {
+        display: flex;
+        margin: 10px 0 0 20px;
+      }
+      .toggle-space .signup-login
+      {
+        display: flex;
+        margin: 10px 0 10px 20px;
+        padding:10px 10px 10px 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    
+    <div class="navbar">
+      
+      <button id="toggler">
+        <img src="toggler.svg" id="toggle-icon">
+      </button>
+      <a href=""><img id="logo" src="apex-logo.png"></a>
+      <div class="nav-item">Home</div>
+      <div class="nav-item">Menu</div>
+      <div class="nav-item">Features</div>
+      <div class="nav-item">Menu</div>
+      <div class="nav-item">Help</div>
+      <form>
+        <button class="btn" style="background-color: rgb(88, 88, 88);">Sign in</button>
+        <input type="submit" class="btn" value="Log in">
+        <input type="password" class="text" placeholder="Password">
+        <input type="email" class="text" placeholder="Email">
+      </form>
+    </div>
+
+    <div class="toggle-space">
+      <div class="item nav-item">Home</div>
+      <div class="item nav-item">Menu</div>
+      <div class="item nav-item">Features</div>
+      <div class="item nav-item">Menu</div>
+      <div class="item nav-item">Help</div>
+      <form>
+        <input type="email" class="text email-pass" placeholder="Email" style="clear: both;">
+        <input type="password" class="text email-pass" placeholder="Password" style="margin-left:5px;">
+        <p></p>
+        <input type="submit" class="btn signup-login" value="Log in" style="clear: both;">
+        <button class="btn signup-login" style="background-color: rgb(88, 88, 88);">Sign in</button>
+      </form>
+    </div>
+
+    <script>
+
+      $("#toggler").click(function()
+      {
+        $(".toggle-space").slideToggle();
+      });
+
+    </script>
+  </body>
+</html>
